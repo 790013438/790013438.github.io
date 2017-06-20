@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title></title>
+        <style type="text/css">
+            /*【浮动】
+            1、参与浮动的元素，会被从原来的文档流中删除（失去了原来的位置），添加到浮动的文档流中;如果父元素没有参与浮动，子元素参与了浮动，那么子元素就会忽视父元素的存在
+            2、参与浮动的元素，可以选择左右两个方向的浮动流
+            3、如果遇到了障碍物（边缘或其他参与浮动的元素），则停止浮动
+            */
+            #box1{
+                width: 100px;
+                height: 100px;
+                background: red;
+                float: right;
+            }
+
+            #box2{
+                width: 100px;
+                height: 100px;
+                background: green;
+                float: right;
+                position: absolute;
+                left: 50px;
+                top: 30px;
+                z-index: 5;
+            }
+
+            #box3{
+                width: 100px;
+                height: 100px;
+                background: blue;
+                float: right;
+            }
+            #bigbox{
+                border: 1px grey solid;
+                float: left;
+                /*z-index: 15;*/
+            }
+
+
+            /******【定位】****/
+            /*定位根据所选择的参照物的规则的不同分为相对定位和绝对定位
+             */
+
+            #d1{
+                width: 100px;
+                height: 100px;
+                background: yellow;
+                /*设置相对定位*/
+                position: relative;
+                /*设置了position属性以后，可以设置偏移量
+                  相对定位的偏移量参照的是该元素在文档流中的位置
+
+                  [注意]设置了相对定位的元素，不会从原来的文档流中删除
+
+                 */
+                left: 20px;/*如果position属性不设置，left、top、right、bottom等属性是无效的*/
+                top: 20px;
+                z-index: 10;
+            }
+            #d2{
+                width: 100px;
+                height: 100px;
+                background: purple;
+                position: relative;
+                left: 120px;
+                bottom: 60px;
+            }
+            #d3{
+                width: 100px;
+                height: 100px;
+                background: orange;
+            }
+
+            /*绝对定位
+              【参照位置】首先考察其直接父元素有木有设置position属性（绝对相对均可），如果设置了则以其为参照物，如果没有设置则继续想外层寻找，直至找到body
+
+             */
+            #largebox{
+                width: 300px;
+                height: 300px;
+                background: lightblue;
+                margin: 0 auto;
+                position: relative;
+            }
+            #smallbox{
+                width: 100px;
+                height: 100px;
+                background: blue;
+                /*设置绝对定位
+                  [注意]设置了绝对定位的元素，会从其原来的文档流中删除
+                 */
+                position: absolute;
+                left: 100px;
+                top: 100px;
+                z-index: 10;
+                /*设置了定位的元素有一个层级关系（z-index），默认z-index为0，这个值越大，元素越在最上层*/
+            }
+            #sbox{
+                width: 100px;
+                height: 100px;
+                background: red;
+                position: absolute;
+                left: 50px;
+                top: 50px;
+                z-index: 11;
+            }
+        </style>
+    </head>
+    <body>
+        <div id='bigbox'> 
+            <div id='box1'>1</div>
+            <div id='box2'>2</div>
+            <div id='box3'>3</div>
+        </div>
+
+        <div id='d1'>a</div>
+        <div id='d2'>b</div>
+        <div id='d3'>c</div>
+
+        <div id='largebox'>
+            <div id='smallbox'>A</div>
+            <div id='sbox'>B</div>
+        </div>
+    </body>
+</html> 
