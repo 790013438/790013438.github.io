@@ -1,0 +1,543 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+<title>java培训20170304</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="布尔教育 http://www.itbool.com" />
+<style>
+	body,h1,h2,h3,h4,p{
+		margin:0;
+		padding:0;
+		font-family:'microsoft YaHei';
+		font-size:14px;
+	}
+	h1,h2,h3,h4{
+		font-weight:100;
+	}
+	ul,li{
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+	a{
+		text-decoration:none;
+		color:#fff;
+	}
+	.train{
+		background-color:#fff;
+		padding:65px 0 82px;
+	}
+	.wrap{
+		width:1140px;
+		margin:0 auto;
+	}
+	.train .tab{
+		overflow:hidden;
+		margin-top:30px;
+	}
+	.train .tab li{
+		float:left;
+		width:164px;
+		cursor:pointer;
+		background:url(./image/tab_bg.png) no-repeat left top;
+		margin-left:-6px;
+		text-align:center;
+		line-height:54px;
+		color:#fff;
+		font-size:26px;
+	}
+	.train .tab li.one{
+		margin:0;
+	}
+	.train .tab li.active{
+		width:192px;
+	}
+	.train .tab li span{
+		width:164px;
+		height:54px;
+		display:block;
+	}
+	.train .tab li.two{
+		background-position:left -55px;
+	}
+	.train .tab li.three{
+		background-position:left -110px;
+	}
+	.train .tab li.four{
+		background-position:left -165px;
+	}
+	.train .tab li.five{
+		background-position:left -220px;
+	}
+	.train .tab li.six{
+		background-position:left -275px;
+	}
+	.train .tab li.seven{
+		background-position:left -330px;
+	}
+	.train .public{
+		background-color:#c0d4e3;
+		display:none;
+	}
+	.train .main .active{
+		display:block;
+	}
+	.train .public .title{
+		height:;
+		background-color:#0056a9;
+		text-align:center;
+		font-size:22px;
+		color:#fff;
+		height:60px;
+		line-height:60px;
+	}
+	.train .public .con{
+		width:788px;
+		margin:0 auto;
+		padding-top:20px;
+		min-height:420px;
+		padding-bottom:60px;
+	}
+	.train h3{
+		text-align:center;
+		font-size:30px;
+		font-weight:100;
+		margin-bottom:30px;
+	}
+	.train .public .con h3{
+		width:187px;
+		height:34px;
+		line-height:34px;
+		font-size:18px;
+		color:#0056a9;
+		background-color:#faffa8;
+		margin:0;
+		text-align:left;
+		padding-left:15px;
+	}
+	.train .public .con h3.long{
+		width:294px;
+	}
+	ul,li{
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+	.train .public .con ul{
+		overflow:hidden;
+		padding:12px 0 0px 15px;
+	}
+	.train .public .con li{
+		float:left;
+		margin-right:28px;
+		padding-bottom:12px;
+		white-space:nowrap;
+	}
+</style>
+<script type="text/javascript" src="./jquery-1.9.0.min.js"></script>
+<script>
+$(function(){
+	//tab栏
+	var _num=0;
+	$('#tab')===document.getElementById('tab');
+	var $tabLis=$('#tab').find('li');
+	var $mainDivs=$('#main').find('div.public');
+    $tabLis.each(function(){
+   	    $(this).click(function(){
+   	    	$tabLis.eq(_num).removeClass('active');
+   	    	$mainDivs.eq(_num).removeClass('active');
+   	    	_num=$(this).index();
+   	    	$(this).addClass('active');
+   	    	$mainDivs.eq(_num).addClass('active');
+   	    });
+    });
+});
+</script>
+</head>
+    <body style="zoom:1;">
+    	<div class="train">
+	    	<div class="wrap">
+		    	<div class="tab" id="tab">
+		                    <ul>
+		                        <li class="one active"><span>Java基础</span></li>
+		                        <li class="two"><span>Java高级</span></li>
+		                        <li class="three"><span>Web前端</span></li>
+		                        <li class="four"><span>JavaWeb</span></li>
+		                        <li class="five"><span>企业框架</span></li>
+		                        <li class="six"><span>项目阶段</span></li>
+		                        <li class="seven"><span>企业专题</span></li>
+		                    </ul>
+		        </div>
+	    		<div class="main" id="main">
+	                    <div class="public active">
+	                        <div class="title">如鹏网Java培训课程:java语言入门阶段</div>
+	                        <div class="con">
+	                            <h3>java语言入门</h3>
+	                            <ul>
+	                                <li>java语言介绍</li>
+	                                <li>学习工具介绍</li>
+	                                <li>学习方法介绍</li>
+	                                <li>第一个java程序</li>
+	                            </ul>
+	                            <h3> java的基本语法</h3>
+	                            <ul>
+	                                <li>基本数据类型</li>
+	                                <li>运算符</li>
+	                                <li>if条件判断</li>
+	                                <li>循环语句</li>
+	                            </ul>
+	                            <h3>面向对象思想</h3>
+	                            <ul>
+	                                <li>变量、方法、类 </li>
+	                                <li>封装</li>
+	                                <li>继承</li>
+	                                <li>多态</li>
+	                            </ul>
+	                            <h3>常用类</h3>
+	                            <ul>
+	                                <li>String、StringBuffer、StringBuilder字符串相关类</li>
+	                                <li>基本类型包装类</li>
+	                                <li>Date、Calendar、DateFormat</li>
+	                                <li>日期相关类</li>
+	                                <li>异常机制和异常类</li>
+	                                <li>IO类</li>
+	                            </ul>
+	                            <h3>mysql数据库基础</h3>
+	                            <ul>
+	                                <li>mysql数据库介绍</li>
+	                                <li>数据库表、字段、字段类型</li>
+	                                <li>select、insert、update、delete语句</li>
+	                                <li>where条件查询</li>
+	                                <li>聚合函数：max、min、avg、count</li>
+	                                <li>排序、分组查询</li>
+	                                <li>联合查询</li>
+	                            </ul>
+	                            <h3> JDBC操作数据库</h3>
+	                            <ul>
+	                                <li>JDBC介绍</li>
+	                                <li>JDBC操作数据库</li>
+	                                <li>sql注入漏洞</li>
+	                                <li>编写一个JDBCUtils</li>
+	                                <li>事务、批量提交</li>
+	                                <li>如何获得自动增长列的值</li>
+	                            </ul>
+	                        </div>
+	                   	</div>
+	                    <div class="public">
+	                        <div class="title">如鹏网Java培训课程:java语言高级阶段</div>
+	                        <div class="con">
+	                            <h3>myeclipse和debug</h3>
+	                            <ul>
+	                                <li>myeclipse的使用和各个功能演示</li>
+	                                <li>JUnit单元测试</li>
+	                                <li>assert断言</li>
+	                                <li>debug视图和技巧</li>
+	                            </ul>
+	                            <h3> java集合框架</h3>
+	                            <ul>
+	                                <li>Collection顶层接口</li>
+	                                <li>List、ArrayList、LinkedList的使用和内部原理讲解</li>
+	                                <li>Set、HashSet的使用和内部原理的讲解</li>
+	                                <li>java泛型</li>
+	                                <li>Map、HashMap的使用和内部原理讲解</li>
+	                                <li>Collections和Arrays集合工具类的使用</li>
+	                            </ul>
+	                            <h3 class="long">反射、内省、注解、正则表达式</h3>
+	                            <ul>
+	                                <li>类的结构和反射的原理</li>
+	                                <li>Class、Field、Method、Constructor反射类的使用</li>
+	                                <li>javabean思想内省的原理</li>
+	                                <li>BeanInfo、Introspector、PropertyDescriptor内省类的使用</li>
+	                                <li>常用注解、自定义注解</li>
+	                                <li>正则语法和String常用正则方法</li>
+	                            </ul>
+	                            <h3>多线程</h3>
+	                            <ul>
+	                                <li>进程和线程的基本概念</li>
+	                                <li>创建线程的两种方式</li>
+	                                <li>线程安全和线程同步</li>
+	                                <li>线程的状态和状态之间的转换</li>
+	                                <li>线程间的通信</li>
+	                                <li>等待唤醒机制</li>
+	                                <li>守护线程</li>
+	                            </ul>
+	                            <h3>网络编程</h3>
+	                            <ul>
+	                                <li>网络通信协议的概念</li>
+	                                <li>服务器和客户端</li>
+	                                <li>socket网络编程</li>
+	                                <li>TCP和UDP协议</li>
+	                            </ul>
+	                            <h3>sql深入</h3>
+	                            <ul>
+	                                <li>mysql命令行操作 </li>
+	                                <li>子查询、联合查询</li>
+	                                <li>索引</li>
+	                                <li>sql优化</li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="public">
+	                        <div class="title">如鹏网Java培训课程:Web前端</div>
+	                        <div class="con">
+	                            <h3>html</h3>
+	                            <ul>
+	                                <li>html介绍</li>
+	                                <li>常用标签</li>
+	                                <li>框架frameset</li>
+	                                <li>表单标签</li>
+	                                <li>div</li>
+	                            </ul>
+	                            <h3>css</h3>
+	                            <ul>
+	                                <li>css介绍</li>
+	                                <li>定义css</li>
+	                                <li>css选择器</li>
+	                                <li>css选择器优先级</li>
+	                                <li>常用样式效果</li>
+	                            </ul>
+	                            <h3>javascript</h3>
+	                            <ul>
+	                                <li>javascript介绍 </li>
+	                                <li></li>
+	                                <li>基本语法</li>
+	                                <li>函数function</li>
+	                                <li>常用对象、常用函数</li>
+	                                <li>js数组</li>
+	                            </ul>
+	                            <h3>jsdom</h3>
+	                            <ul>
+	                                <li>jsdom介绍 </li>
+	                                <li>事件和事件冒泡</li>
+	                                <li>元素的获取创建和增删</li>
+	                                <li>元素属性操作</li>
+	                            </ul>
+	                            <h3>jQuery</h3>
+	                            <ul>
+	                                <li>jQuery介绍</li>
+	                                <li>jQuery语法</li>
+	                                <li>jQuery选择器</li>
+	                                <li>jQuery对象</li>
+	                                <li>jQuery操作元素对象</li>
+	                                <li>jQuery-EasyUI</li>
+	                            </ul>
+	                            <h3>Html5</h3>
+	                            <ul>
+	                                <li>多媒体</li>
+	                                <li>新表单元素</li>
+	                                <li>语义化标签</li>
+	                                <li>拖放</li>
+	                                <li>Canvas</li>
+	                                <li>本地存储</li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="public">
+	                        <div class="title">如鹏网Java培训课程:javaweb编程、核心阶段</div>
+	                        <div class="con">
+	                            <h3>xml</h3>
+	                            <ul>
+	                                <li>xml语法</li>
+	                                <li>转义字符</li>
+	                                <li>DTD约束</li>
+	                                <li>schema约束</li>
+	                                <li>xml的dom解析</li>
+	                                <li>xml的sax解析</li>
+	                                <li>dom4j</li>
+	                                <li>xpath</li>
+	                            </ul>
+	                            <h3>tomcat服务器</h3>
+	                            <ul>
+	                                <li>服务器介绍</li>
+	                                <li>tomcat目录结构</li>
+	                                <li>web项目目录结构</li>
+	                                <li>虚拟目录</li>
+	                                <li>虚拟主机</li>
+	                            </ul>
+	                            <h3>http协议</h3>
+	                            <ul>
+	                                <li>协议的概念</li>
+	                                <li>http请求行、请求头、请求体</li>
+	                                <li>http状态行、响应头、响应体</li>
+	                            </ul>
+	                            <h3>servlet基础</h3>
+	                            <ul>
+	                                <li>servlet介绍、创建 </li>
+	                                <li>servlet的配置</li>
+	                                <li>Servlet的类层次结构</li>
+	                                <li>HttpServletResponse</li>
+	                                <li>HttpServletRequest请求乱码的原理和解决</li>
+	                                <li>ServletConfig和ServletContext</li>
+	                                <li>cookie和session</li>
+	                            </ul>
+	                            <h3>jsp编程</h3>
+	                            <ul>
+	                                <li>jsp运行原理</li>
+	                                <li>jsp脚本元素、指令元素</li>
+	                                <li>jsp的九个内置对象</li>
+	                                <li>el表达式的原理</li>
+	                                <li>el表达式的语法和使用</li>
+	                                <li>jstl标准标签库</li>
+	                                <li>自定义标签</li>
+	                            </ul>
+	                            <h3>servlet高级</h3>
+	                            <ul>
+	                                <li>mvc思想</li>
+	                                <li>数据库连接池</li>
+	                                <li>dbutils</li>
+	                                <li>filter过滤器</li>
+	                                <li>listener监听器</li>
+	                                <li>javamail</li>
+	                                <li>文件上传下载</li>
+	                            </ul>
+	                            <h3>ajax编程</h3>
+	                            <ul>
+	                                <li>浏览器向服务器发生请求的方式</li>
+	                                <li>ajax介绍</li>
+	                                <li>创建ajax核心对象XMLHttpRequest和编程步骤</li>
+	                                <li>ajax的方法、属性</li>
+	                                <li>json讲解和使用</li>
+	                                <li>ajax操作json格式的数据</li>
+	                                <li>jQuery的ajax方法</li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="public">
+	                        <div class="title">如鹏网Java培训课程:高级框架struts、hibernate、spring</div>
+	                        <div class="con">
+	                            <h3>struts2</h3>
+	                            <ul>
+	                                <li>struts2结构和工作原理</li>
+	                                <li>struts2的常量、路径配置</li>
+	                                <li>struts2结果result类型</li>
+	                                <li>类型转换</li>
+	                                <li>预定义校验器和自定义校验器</li>
+	                                <li>拦截器的原理</li>
+	                                <li>常用拦截器和自定义拦截器</li>
+	                                <li>国际化</li>
+	                                <li>OGNL表达式语言的结构和使用</li>
+	                                <li>struts2的ui标签以及使用</li>
+	                                <li>模型驱动</li>
+	                            </ul>
+	                            <h3>hibernate</h3>
+	                            <ul>
+	                                <li>ORM思想</li>
+	                                <li>hibernate基本配置</li>
+	                                <li>hibernate核心API的使用</li>
+	                                <li>hibernate编程步骤</li>
+	                                <li>hibernate映射</li>
+	                                <li>文件配置</li>
+	                                <li>hibernate检查策略和检索方式</li>
+	                                <li>继承映射配置</li>
+	                                <li>事务和隔离级别</li>
+	                                <li>二级缓存和ehcache</li>
+	                            </ul>
+	                            <h3>spring</h3>
+	                            <ul>
+	                                <li>spring介绍</li>
+	                                <li>IoC控制翻转</li>
+	                                <li>DI依赖注入</li>
+	                                <li>spring核心API</li>
+	                                <li>xml方式配置bean</li>
+	                                <li>注解方式配置bean</li>
+	                                <li>aop面向切面编程</li>
+	                                <li>spring封装jdbc和事务管理</li>
+	                                <li>ssh整合</li>
+	                                <li>调度器Quartz的使用</li>
+	                            </ul>
+	                            <h3>SSM框架</h3>
+	                            <ul>
+	                                <li>spring MVC</li>
+	                                <li>MyBatis</li>
+	                                <li>SSM框架整合</li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="public">
+	                        <div class="title">如鹏网Java培训课程:项目阶段</div>
+	                        <div class="con">
+	                            <h3>商城系统项目</h3>
+	                            <ul>
+	                                <li>商品展示</li>
+	                                <li>商品搜索</li>
+	                                <li>购物车管理</li>
+	                                <li>订单管理</li>
+	                            </ul>
+	                            <h3><a href="/News/9/445.shtml" style="color:blue" target="_blank">如鹏在线教育网</a></h3>
+	                            <ul>
+	                                <li>这个项目所有需求都来自于如鹏网日常教学场景，是一个可以承受海量访问的在线教育系统。</li>
+	                                <li>整体采用分布式架构，使用maven进行模块化开发和维护；</li>
+	                                <li>使用spring+springMVC+mybatis作为核心框架；</li>
+	                                <li>采用云视频、云存储、云短信、云邮件等云计算服务；</li>
+	                                <li>使用redis NoSQL数据库；</li>
+	                                <li>使用jQuery、Bootstrap、H-UI、百度富文本编辑器UEditor、layer、laypage、validation等前端框架和组件；</li>
+	                                <li><a style="color:blue;" href="/News/9/445.shtml" target="_blank">点击查看项目详细介绍</a></li>
+	                            </ul>
+	                            <h3><a style="color:blue" href="/News/9/378.shtml" target="_blank">《掌上租》触屏版</a></h3>
+	                            <ul>
+	                                <li>这是一个手机版的租房网站，提供了搜索房源、预约看房、房源委托、后台抢单、房源管理、操作日志、定时报表、配置管理等功能，包含了主流的互联网网站用的技术，采用TDD(测试驱动开发)理念进行开发。</li>
+	                                <li>《掌上租》项目涉及到了Redis、Solr、自定义Tag、自定义Function、Quartz、Log4j2、页面静态化、分布式缓存、缩略图、图片水印、JUnit单元测试、RBAC权限控制、AOP、Annotation、反射等技术，还涉及到云存储、CDN、手机短信验证码、sendcloud等云计算服务技术，网站前台采用MUI前端框架（自适应手机屏幕），网站后台采用Hui前端框架。</li>
+	                                <li><a style="color:blue;" href="/News/9/378.shtml" target="_blank">点击查看项目详细介绍</a></li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	                    <div class="public">
+	                        <div class="title">如鹏网Java培训课程:企业专题</div>
+	                        <div class="con">
+	                            <h3>svn</h3>
+	                            <ul>
+	                                <li>svn介绍</li>
+	                                <li>svn的安装</li>
+	                                <li>svn的命令操作和图形界面操作</li>
+	                                <li>在eclipse中使用svn</li>
+	                            </ul>
+	                            <h3>redis</h3>
+	                            <ul>
+	                                <li>nosql数据库特点</li>
+	                                <li>redis的安装和命令行操作</li>
+	                                <li>redis的java客户端jedis</li>
+	                                <li>redis的内存结构和操作原理</li>
+	                                <li>消息队列</li>
+	                            </ul>
+	                            <h3>Linux</h3>
+	                            <ul>
+	                                <li>Linux的安装和介绍</li>
+	                                <li>Linux常用命令</li>
+	                                <li>Linux文件系统和文件操作</li>
+	                                <li>Linux的系统管理</li>
+	                                <li>在Linux上部署开发环境</li>
+	                            </ul>
+	                            <h3>maven</h3>
+	                            <ul>
+	                                <li>maven安装配置；</li>
+	                                <li>maven项目坐标；</li>
+	                                <li>pom模型、使用eclipse开发maven项目、archetype插件；</li>
+	                                <li>依赖配置、生命周期作用域和子模块间的依赖、依赖传递、聚合、继承、nexus私服；</li>
+	                            </ul>
+	                            <h3>Oracle数据库</h3>
+	                            <ul>
+	                                <li>伪表、伪列、视图、序列；</li>
+	                                <li>分页、高级函数、存储过程、存储函数；</li>
+	                                <li>Oracle权限管理</li>
+	                            </ul>
+	                            <h3>Bug管理</h3>
+	                            <ul>
+	                                <li>企业团队开发流程；</li>
+	                                <li>Bug管理流程</li>
+	                                <li>Bug管理系统的安装和使用；</li>
+	                            </ul>
+	                            <h3>微信小程序开发</h3>
+	                            <ul>
+	                                <li>为什么微信小程序爆红；</li>
+	                                <li>微信小程序战略发展分析；</li>
+	                                <li>微信小程序开发基础；</li>
+	                                <li>《驾考宝典》项目开发(<a target="_blank" style="color:blue" href="/News/9/390.shtml">点击查看项目介绍</a>)；</li>
+	                            </ul>
+	                        </div>
+	                    </div>
+	            </div>
+	        </div>
+    	</div>
+    </body>
+</html>
+<!-- 20170301 4633-4683 +1000+5 -->
