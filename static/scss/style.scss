@@ -1,0 +1,9 @@
+@import "mediaqueries";
+header {
+    width: 50%; //Properties for small screens
+    background: red;
+    @include minw(640) {
+        width: 100%; //Properties for large screens
+        background: blue;
+    }
+}
