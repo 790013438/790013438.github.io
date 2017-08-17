@@ -1,0 +1,11 @@
+@mixin gernericContainer ($padding:0, $margin:0, $border:none) {
+    padding:$padding;
+    margin:$margin;
+    border:$border;
+}
+* {
+
+}
+.wrap-main {
+    @include gernericContainer();
+}

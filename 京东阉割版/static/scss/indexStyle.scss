@@ -1,0 +1,381 @@
+$fontSize: 14px;
+$jdColor: #f10215;
+$width: 1190px;
+@mixin genericBox ($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+}
+@mixin genericContainer ($width: auto, $height: auto, $margin: 0, $padding: 0, $position:relative) {
+    @include genericBox($width, $height);
+    margin: $margin;
+    padding: $padding;
+    position: $position;
+}
+@mixin genericFont ($fontWeight: 400, $fontSize: 14px, $color: inherit, $textAlign: center, $lineHeight: 20px, $background: rgba(45, 45, 45, 0), $opacity: .9) {
+    font-weight: $fontWeight;
+    font-size: $fontSize;
+    color: $color;
+    text-align: $textAlign;
+    line-height: $lineHeight;
+    background: $background;
+    opacity: $opacity;
+}
+
+@font-face {
+    font-family: iconfont;
+    src: url(../font/iconfont.woff) format('woff')
+}
+
+@font-face {
+    font-family: fzzhengheis-el-gbregular;
+    src: url(../font/FZZXHJW.TTF);
+}
+* {
+    border: none;
+    margin: 0px auto;
+    padding: 0;
+    vertical-align: baseline;
+    text-decoration: none;
+    font-style: normal;
+    list-style: none;
+}
+
+body {
+    text-align: center;
+    background-color: #F6F6F6;
+}
+
+a {
+    text-decoration: none;
+}
+
+i {
+    font-style: normal;
+}
+
+img {
+    border:none;
+    vertical-align: middle;
+}
+
+
+.row {
+    width: 100%;
+    clear: both;
+}
+
+.main {
+    @include genericContainer(1190px, auto, 0 auto, 0, relative);
+}
+
+.icon_shutdown {
+    cursor: pointer;
+    @include genericContainer($width: 20px, $position: absolute);
+    right: 5px;
+    top: 5px;
+    @include genericFont (bold, $fontSize, white);
+}
+.top_bg {
+    background-color: #000000;
+    .nav_top_pic {
+        height: 80px;
+        position: relative;
+    }
+}
+.top_nav_bg {
+    background-color: #e3e4e5;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    
+    .top_nav {
+        height: 30px;
+        line-height: 30px;
+        color: #999;
+        font-size: 12px;
+    }
+}
+
+.fl {
+    float: left;
+    li {
+        position: relative;
+        &.drop_down {
+            margin-left: 200px;
+        }
+        .show_area {
+            font-family: iconfont;
+            padding-right: 7px;
+            padding-left: 7px;
+        }
+    }
+}
+
+.fr {
+    float: right;
+    a {
+        color: #999;
+        &:hover {
+            color: #c81623;
+        }
+    }
+    li {
+        float: left;
+        position: relative;
+        &.fore1 {
+            margin-right: 8px;
+        }
+        &.spacer {
+            overflow: hidden;
+            margin: 11px 5px 0;
+            width: 1px;
+            height: 10px;
+            background-color: #ccc;
+        }
+    }
+    .dt {
+        padding-left: 7px;
+        padding-right: 7px;
+    }
+}
+.top_logo {
+    height: 140px;
+    position: relative;
+}
+.logo {
+    @include genericContainer($width: 190px, $height: 170px, $position: absolute);
+    z-index: 2;
+    left: 0;
+    top: -31px;
+    box-shadow: 0 -12px 10px rgba(0, 0 , 0, .2);
+    background-color: #fff;
+    .logo_tit {
+        width: 100%;
+        height: 100%;
+        .logo_tit_lk {
+            overflow: hidden;
+            @include genericContainer($width: 190px, $height: 170px);
+            background-image: url(../images/logo.v2.png);
+            background-repeat: no-repeat;
+            text-indent: -999px;
+            display: block;
+        }
+    }
+}
+.search-m {
+    position: relative;
+    z-index: 1;
+    height: 60px;
+    .form {
+        @include genericContainer($width: 550px, $height: 35px, $position: absolute);
+        left: 320px;
+        top: 25px;
+    }
+    .text {
+        left: 0;
+        @include genericContainer(500px, 35px, inherit, 4px, absolute);
+        border: 1px solid $jdColor;
+        color: #989898;
+        top: 0;
+        outline: none;
+        line-height: 25px;
+        font-size: 14px;
+    }
+    .button {
+        @extend .form;
+        top: 0;
+        left: 500px;
+        width: 50px;
+        border: none;
+        outline: none;
+        @include genericFont(700, 20px, #fff, inherit, 35px, $jdColor, 1);
+        .icon_search {
+            font-family: iconfont;
+            font-style: normal;
+        }
+    }
+}
+.drop_down_cart {
+    position: absolute;
+    z-index: 6;
+    right: 99px;
+    top: 25px;
+    overflow: hidden;
+    .cw-icon {
+        overflow: hidden;
+        @include genericContainer(188px, 33px);
+        float: left;
+        border: 1px solid #e3e4e5;
+        line-height: 33px;
+        background-color: #fff;
+        text-align: center;
+        .ci-count {
+            position: absolute;
+            top: 5px;
+            left: 140px;
+            right: auto;
+            display: inline-block;
+            border-radius: 9px;
+            min-width: 12px;
+            padding: 2px;
+            @include genericFont($fontSize: 12px, $color: #fff, $lineHeight: 12px, $background: $jdColor);
+        }
+        .icon_cart {
+            font-family: iconfont;
+            font-style: normal;
+            color: $jdColor;
+        }
+        a {
+            color: $jdColor;
+            font-size: 12px;
+        }
+    }
+}
+.hot_words {
+    overflow: hidden;
+    @include genericContainer($width: 550px, $height: 20px, $position: absolute);
+    left: 320px;
+    top: 65px;
+    line-height: 20px;
+    a {
+        float: left;
+        margin-right: 10px;
+        white-space: nowrap;
+        color: #999;
+        font-size: 12px;
+        &.style-red {
+            color: $jdColor;
+        }
+    }
+}
+.nav_items {
+    display: block;
+    z-index: 3;
+    overflow: hidden;
+    position: absolute;
+    left: 200px;
+    bottom: 0px;
+    @include genericBox(790px, 40px);
+    ul {
+        float: left;
+    }
+    li {
+        margin-left: 30px;
+        @extend ul;
+    }
+    a {
+        position: relative;
+        display: block;
+        @include genericFont($fontWeight: 700, $fontSize: 16px, $color: #555, $lineHeight:40px)
+    }
+    .spacer {
+        @extend ul;
+        @include genericBox(1px, 10px);
+        overflow: hidden;
+        margin: 15px -10px 0 15px;
+        background-color: #ccc;
+    }
+}
+.row_slide {
+    z-index: 9;
+    padding-bottom: 10px;
+}
+.main_slide {
+    z-index: 1;
+    @include genericBox($width, 480px);
+    background-color: #f6f6f6;
+    position: relative;
+    margin: 0 auto;
+    .fs_col2 {
+        @include genericBox(790px, 100%);
+        float:left;
+        .slider_main {
+            position: relative;
+            margin-bottom: 10px;
+            height: 340px;
+        }
+        .slider_item {
+            overflow: hidden;
+            position: absolute;
+            @include genericBox(100%, 100%);
+            background-color: #fff;
+        }
+        .slider_extend {
+            margin-left: -10px;
+            height: 130px;
+        }
+        .slider_bi {
+            @extend .slider_extend;
+            margin-left: 10px;
+            @include genericBox(390px, 130px);
+            overflow: hidden;
+            float: left;
+            &_lk {
+                display: block;
+                @include genericBox(100%, 100%);
+                background-color: #fff;
+            }
+            &_img {
+                display: block;
+                @include genericBox(390px, 130px);
+            }
+        }
+    }
+}
+.fs_col1 {
+    float: left;
+    @include genericBox(190px, 100%);
+    margin-right: 10px;
+    .cate {
+        position: relative;
+        z-index: 2;
+    }
+    .cate_menu {
+        overflow: hidden;
+        padding: 15px 0;
+        height: 450px;
+        background-color: #6e6568;
+        color: #fff;
+        &_item {
+            float: left;
+            @include genericBox(178px, 30px);
+            @include genericFont($textAlign: left, $lineHeight: 30px, $fontSize: 0, $opacity: 1);
+            padding-left: 12px;
+            a:hover {
+                color: $jdColor;
+            }
+        }
+        &_lk {
+            font-size: 14px;
+            color: #fff;
+        }
+        &_line {
+            padding: 0 4px;
+            font-size: 12px;
+        }
+    }
+}
+.slider_indicator {
+    margin-left: -91px;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    bottom: 20px;
+    font-size: 0;
+    padding: 4px 8px;
+    border-radius: 12px;
+    background-color:hsla(0, 0%, 100%, .3);
+    i {
+        font-style: normal;
+    }
+    &_btn {
+        display: inline-block;
+        margin-right: 10px;
+        @include genericBox(12px, 12px);
+        border-radius:100%;
+        background-color: #fff;
+        cursor: pointer;
+        &_active {
+            background-color: #db192a;
+        }
+    }
+}

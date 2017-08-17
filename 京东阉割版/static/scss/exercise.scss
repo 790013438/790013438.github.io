@@ -1,0 +1,95 @@
+@import "compass/css3/images";
+$width:100%;
+$height: 46px;
+$logoWidth: 120px;
+$logoHeight: 40px;
+$bdColor: #ddd;
+$fontColor: #333;
+$searchWidth: 860px;
+$searchHeight: 44px;
+@mixin genericMargin ($padding: 0, $margin: 0) {
+    padding:$padding;
+    margin: $margin;
+}
+@mixin genericContainer ($padding:0, $margin: 0, $width: 100%, $height:100%, $border:0, $relative: relative) {
+    @include genericMargin($padding, $margin);
+    width: $width;
+    height: $height;
+    border: $border;
+    position: $relative;
+}
+header {
+    @include background-image(linear-gradient(red, blue));
+}
+body {
+    font: 14px/100% arial,"Hiragino Sans GB","Hiragino Sans GB W3",\5b8b\4f53;
+    background: #f7f7f8;
+    margin:0;
+}
+input {
+    vertical-align: middle;
+    font-weight: 400;
+}
+.hao123-search {
+    @include genericContainer(14px 0 4px, 0, $width, $height, 0, fixed);
+    top:0;
+    border-bottom: 1px solid $bdColor;
+    .search {
+        @include genericContainer(0, 0 auto, $searchWidth, $height);
+        z-index:777;
+    }
+    .left-logo {
+        @include genericContainer(0, 4px 30px 0 -26px, $logoWidth, $logoHeight);
+        float: left;
+        a {
+            position: absolute;
+            left: 0;
+            z-index: 100;
+            color: $fontColor;
+            text-decoration:none;
+            outline: 0;
+        }
+        span {
+            background: url(http://s2.hao123img.com/her/static/indexher/container/module/search/searchlogo.dd56f38.png);
+            width: $logoWidth;
+            height: $logoHeight - 1;
+            display: block;
+        }
+    }
+    
+}
+.right-form-wrapper {
+    form {
+        padding:0;
+        margin:0;
+    }
+    div {
+        @extend form;
+        display: inline-block;
+        float:left;
+    }
+    .input-wrapper {
+        position: relative;
+        .input-border {
+            @include genericContainer(0, 0, 538px, $searchHeight, 1px solid #666);
+            border-right:0;
+            background:#fff;
+        }
+    }
+    
+    .button-wrapper {
+        vertical-align: top;
+        border: 1px solid #666;
+        border-left-color: #999;
+        input {
+            @include genericContainer(0, 0, 118px, $searchHeight);
+            border: 0;
+            font-family: arial;
+            font-size: 16px;
+            color: #222;
+            background: #e6e6e6;
+            cursor: pointer;
+            @include background-image(linear-gradient(#fff, #e6e6e6));
+        }
+    }
+}

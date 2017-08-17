@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<style type="text/css">
+			*{border: none; margin: 0px auto; padding: 0px auto;}
+			body{text-align: center;}
+			.top,.other,.search{width: 1190px;}
+			.top{height: 200px; background-color: #FF0000;}
+			.search{height: 100px; background-color: #00ffcc;}
+			.other{height: 2000px; background-color: #FF0000;}
+			#search_show{height: 100px; text-align: center; width: 100%;  position: fixed; top: 0px; }
+		</style>
+		<div class="main">
+			<div id="search_show" style="display: none;">
+				<div style="width: 1190px; background-color: #00ffcc; height: 100px;">
+					搜索
+				</div>
+			</div>
+			<div class="top">
+				
+			</div>
+			<div class="search">
+				搜索
+			</div>
+			<div class="other">
+				1<br>
+				2<br>
+				3<br>
+				4<br>
+				5<br>
+				6<br>
+				7<br>
+				7<br>
+				8<br>
+				9<br>
+				0<br>
+				0<br>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$(document).scroll(function(){
+					($(document).scrollTop() > $(".top").height())?$("#search_show").show():$("#search_show").hide();
+				});
+			});
+		</script>
+	</body>
+</html>
