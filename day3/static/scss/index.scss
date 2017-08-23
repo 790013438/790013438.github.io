@@ -1,0 +1,66 @@
+p {
+    border: 1px dashed red;
+    color:blue;
+    &.special{
+        color:#f90;
+    }
+    &:before {
+        content:"来来，";
+        color:red;
+    }
+    &:after {
+        content:",蕉";
+    }
+    &:firstline {
+        color: purple;
+    }
+    &:firstchar {
+        font-size: 20px;
+    }
+}
+.special {
+    font-size: 18px !important;
+}
+.specify {
+    border: 1px solid green;
+    color:purple;
+}
+a {
+    &:hover{
+        color:green;
+    }
+}
+input {
+    color: red;
+    &[type] {
+        background-color:aliceblue;
+    }
+    &[type="text"] {
+        border:1px solid #purple;
+        radius:3px;
+        background-color:antiquewhite
+    }
+}
+div{
+    background:rgba(white,.3);
+    border:2px solid #808080;
+}
+#box1 {
+    background:rgba(#ff9900,.75);
+    width:330px;
+    height:200px;
+    border-bottom: 1px solid rgba(white,.8);
+}
+#box2 {
+    width:100px;
+    background:rgba(blue,.3);
+    border-bottom:1px solid rgba(white,.75);
+    height:50px;
+}
+
+body {
+    background-color:#f90;
+    background-image:url(http://pan.baidu.com/static/images/16new/bg3.jpg);
+    background-repeat:repeat-x;
+    background-position:center center;
+}

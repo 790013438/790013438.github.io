@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAQA,UAAW,GAPP,OAAO,EADwB,CAAC,EAEhC,MAAM,EAFoC,CAAC,EAG3C,MAAM,EAH+C,IAAI",
+"sources": ["../scss/style.scss"],
+"names": [],
+"file": "style.css"
+}

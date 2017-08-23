@@ -1,0 +1,126 @@
+<html>
+
+	<head>
+		<title>scss linear-gradient</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="static/css/exercise.css">
+		<style>
+			h2 {
+				-webkit-transform: ;
+				-moz-transform: ;
+				-ms-transform: ;
+				-o-transform: ;
+				transform: ;
+			}
+		</style>
+		<script type="text/javascript" src="static/js/jquery-3.2.1.js"></script>
+		<script>
+			$(function() {
+				/*  
+    对scroll()方法进行扩展
+    在jQuery 中scroll()只可以监听滚动的时候的一个事件
+    这段js可以监听scrollStart和scrollStop
+*/
+				(function() {
+
+					var special = jQuery.event.special,
+						uid1 = 'D' + (+new Date()),
+						uid2 = 'D' + (+new Date() + 1);
+
+					special.scrollStart = {
+						setup: function() {
+							var timer,
+								handler = function(evt) {
+									var _self = this,
+										_args = arguments;
+
+									if(timer) {
+										clearTimeout(timer);
+									} else {
+										evt.type = 'scrollStart';
+										jQuery.event.handle.apply(_self, _args);
+									}
+
+									timer = setTimeout(function() {
+										timer = null;
+									}, special.scrollStop.latency);
+
+								};
+
+							jQuery(this).on('scroll', handler).data(uid1, handler);
+
+						},
+						teardown: function() {
+							jQuery(this).off('scroll', jQuery(this).data(uid1));
+						}
+					};
+
+					special.scrollStop = {
+						latency: 300,
+						setup: function() {
+
+							var timer,
+								handler = function(evt) {
+
+									var _self = this,
+										_args = arguments;
+
+									if(timer) {
+										clearTimeout(timer);
+									}
+
+									timer = setTimeout(function() {
+
+										timer = null;
+										evt.type = 'scrollStop';
+										jQuery.event.handle.apply(_self, _args);
+
+									}, special.scrollStop.latency);
+
+								};
+
+							jQuery(this).on('scroll', handler).data(uid2, handler);
+
+						},
+						teardown: function() {
+							jQuery(this).off('scroll', jQuery(this).data(uid2));
+						}
+					};
+
+				})();
+				(function() {
+					jQuery(window).on('scrollStart', function() {
+						console.log("start");
+					});
+
+					jQuery(window).on('scrollStop', function(e) {
+						console.log("end");
+					});
+				})();
+			});
+		</script>
+	</head>
+
+	<body style="height:1000px;">
+		<div class="hao123-search">
+			<div class="search">
+				<div class="left-logo">
+					<a>
+						<span class="color"></span>
+					</a>
+				</div>
+				<div class="right-form-wrapper">
+					<form>
+						<div class="input-wrapper">
+							<div class="input-border"></div>
+						</div>
+						<div class="button-wrapper">
+							<input type="submit" value="百度一下" />
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
