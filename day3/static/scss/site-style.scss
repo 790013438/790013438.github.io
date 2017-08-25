@@ -1,0 +1,49 @@
+//Media Query Mixin - Desktop-first
+@mixin forSmallScreens($media) {
+    @media(max-width:$media/16+em) {@content;}
+}
+.head{
+    background:url(../images/header-background.png) repeat-x;
+    width:100%;
+    margin:auto;
+    padding:10px;
+    background:#999;
+    border-radius:0 0 3px 3px;
+    position:relative;
+}
+.wrap{
+    &-main{
+        width:1200px;
+        background-color:rgba(blue,.3);
+        margin:0 auto;
+    }
+}
+//Main Container
+.main-container {
+    max-width:980px;
+}
+//Placeholder
+%hightlight-section {
+    border:white 1px solid;
+    border-radius:3px;
+    background:rgba(white,.1);
+}
+//Helper Classes
+.flex-container {
+    display: flex;
+    @include forSmallScreens(600) {
+        display:block;
+    }
+}
+//General
+*,
+*:before,
+*:after{
+    box-sizing:border-box;
+}
+body {
+    font-family:Arial, "Helvetica Neue",Helvetia,sans-serif;
+}
+blockqute {
+    font-style:italic;
+}
