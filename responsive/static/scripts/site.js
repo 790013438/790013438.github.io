@@ -28,3 +28,10 @@ if (!localStorage.getItem('name')) {
 myButton.onclick = function() {
     setUserName();
 }
+
+var para = document.querySelector(".chris");
+para.addEventListener('click', updateName);
+function updateName() {
+    var name = prompt("Enter a new name");
+    para.textContent = 'Player 1: ' + name;
+}
