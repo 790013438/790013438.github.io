@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAGA,aAAc,GACV,OAAO,EAAE,GAAG,EACZ,MAAM,EAAE,eAAe",
+"mappings": "AAAA,KAAM,GACF,eAAe,EAAC,QAAQ,EACxB,cAAc,EAAC,GAAG;;AAEtB,aAAc,GACV,OAAO,EAAE,GAAG,EACZ,MAAM,EAAE,eAAe",
 "sources": ["../scss/courses.scss"],
 "names": [],
 "file": "courses.css"
